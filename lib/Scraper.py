@@ -22,7 +22,7 @@ class Scraper:
             self.courses.append(new_course)
         ipdb.set_trace()
 
-scraper = Scraper()  # Create an instance of the Scraper class
+scraper = Scraper()  # Creates an instance of the Scraper class
 scraper.get_page()  # Call the get_page method on the instance
 
 
