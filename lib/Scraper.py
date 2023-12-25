@@ -31,6 +31,11 @@ class Scraper:
             new_course = Course(title, date, description)
             self.courses.append(new_course)
         return self.courses
+    
+    def print_courses(self):
+        for course in self.courses:
+            print(course)
 
 scraper = Scraper()  # Create an instance of the Scraper class
 scraper.get_page()  # Call the get_page method on the instance
+scraper.print_courses()  # Call the print_courses method on the instance
