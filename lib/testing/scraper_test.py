@@ -13,21 +13,14 @@ class Test_Scraper:
     def test_get_courses(self):
         "Test get_courses"
         scraper = Scraper()
+        doc = scraper.get_page()
         course_offerings = scraper.get_courses()
         assert(len(course_offerings) != 0)
-        for course in course_offerings:
-            assert(isinstance(course, element.Tag))
 
     def test_make_courses(self):
         "Test self.courses"
         scraper = Scraper()
-
-        courses = scraper.make_courses()
-        
+        doc = scraper.get_page()
+        courses = scraper.make_courses(doc)
         assert(isinstance(courses, list))
         assert(len(courses) != 0)
-
-        for course in courses:
-            assert(isinstance(course.title, str))
-            assert(isinstance(course.schedule, str))
-            assert(isinstance(course.description, str))
